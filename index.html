@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="fr">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <title>Équilibrage des Manèges</title>
+  </head>
+  <body>
+    <h1>Équilibrage des Manèges</h1>
+
+    <!-- Formulaire pour entrer les poids -->
+    <div id="form">
+      <p>Entrez le poids de chaque personne dans chaque manège :</p>
+
+      <!-- Boucle pour créer les entrées pour chaque manège -->
+      <div id="manegeInputs">
+        <div id="manege1">
+          <h3>Manège 1</h3>
+          <input
+            type="number"
+            id="manege1_person1"
+            placeholder="Poids personne 1 (en kg)"
+          />
+          <input
+            type="number"
+            id="manege1_person2"
+            placeholder="Poids personne 2 (en kg)"
+          />
+          <input
+            type="number"
+            id="manege1_person3"
+            placeholder="Poids personne 3 (en kg)"
+          />
+        </div>
+        <div id="manege2">
+          <h3>Manège 2</h3>
+          <input
+            type="number"
+            id="manege2_person1"
+            placeholder="Poids personne 1 (en kg)"
+          />
+          <input
+            type="number"
+            id="manege2_person2"
+            placeholder="Poids personne 2 (en kg)"
+          />
+          <input
+            type="number"
+            id="manege2_person3"
+            placeholder="Poids personne 3 (en kg)"
+          />
+        </div>
+        <div id="manege3">
+          <h3>Manège 3</h3>
+          <input
+            type="number"
+            id="manege3_person1"
+            placeholder="Poids personne 1 (en kg)"
+          />
+          <input
+            type="number"
+            id="manege3_person2"
+            placeholder="Poids personne 2 (en kg)"
+          />
+          <input
+            type="number"
+            id="manege3_person3"
+            placeholder="Poids personne 3 (en kg)"
+          />
+        </div>
+        <div id="manege4">
+          <h3>Manège 4</h3>
+          <input
+            type="number"
+            id="manege4_person1"
+            placeholder="Poids personne 1 (en kg)"
+          />
+          <input
+            type="number"
+            id="manege4_person2"
+            placeholder="Poids personne 2 (en kg)"
+          />
+          <input
+            type="number"
+            id="manege4_person3"
+            placeholder="Poids personne 3 (en kg)"
+          />
+        </div>
+      </div>
+
+      <button onclick="equilibrerManege()">Calculer</button>
+      <button onclick="resetForm()">Reset</button>
+    </div>
+
+    <!-- Affichage des résultats -->
+    <div id="resultat"></div>
+
+    <script src="script.js"></script>
+  </body>
+</html>
