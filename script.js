@@ -31,7 +31,7 @@ function equilibrerManege() {
     let poidsAajouter = poidsMaxManege - poidsManege[i];
     resultatHTML += `<li>Pour le manège ${
       i + 1
-    }, ajoutez ${poidsAajouter} kg.</li>`;
+    }, ajoutez <strong>${poidsAajouter}</strong> kg pour équilibrer à ${poidsMaxManege} kg.</li>`;
   }
   resultatHTML += "</ul>";
 
