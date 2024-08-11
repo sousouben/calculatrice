@@ -89,6 +89,7 @@ button:hover {
 }
 
 #resultat {
+  display: none;
   margin: 20px 0px;
   background-color: #e9ecef;
   padding: 20px;

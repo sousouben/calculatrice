@@ -16,6 +16,7 @@ function equilibrerManege() {
       document.getElementById(
         "resultat"
       ).innerHTML = `Attention ! Le poids total pour le manège ${i} dépasse le poids maximum de ${poidsMax} kg.`;
+      document.getElementById("resultat").style.display = "block"; // Affiche le résultat
       return;
     }
 
@@ -37,6 +38,7 @@ function equilibrerManege() {
 
   // Afficher les résultats
   document.getElementById("resultat").innerHTML = resultatHTML;
+  document.getElementById("resultat").style.display = "block"; // Affiche le résultat
 }
 
 function resetForm() {
@@ -46,4 +48,5 @@ function resetForm() {
 
   // Effacer le résultat affiché
   document.getElementById("resultat").innerHTML = "";
+  document.getElementById("resultat").style.display = "none"; // Cache le résultat
 }
