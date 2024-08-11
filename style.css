@@ -1,7 +1,10 @@
 /* Style global */
 body {
   font-family: Arial, sans-serif;
-  background-color: #e9ecef;
+  background: url("img.jpeg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-position: center;
   margin: 10px 0px;
   padding: 0;
   display: flex;
@@ -17,7 +20,7 @@ h1 {
 }
 
 #form {
-  background-color: #fff;
+  background-color: #ffffffc2;
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -54,7 +57,7 @@ input[type="number"] {
 
 button {
   padding: 15px 40px;
-  background-color: #007bff;
+  background-color: #6d7e16;
   border: none;
   color: white;
   border-radius: 5px;
