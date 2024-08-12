@@ -50,3 +50,37 @@ function resetForm() {
   document.getElementById("resultat").innerHTML = "";
   document.getElementById("resultat").style.display = "none"; // Cache le résultat
 }
+
+let deferredPrompt;
+
+window.addEventListener("beforeinstallprompt", (e) => {
+  // Empêche l'affichage de la bannière d'installation native
+  e.preventDefault();
+  deferredPrompt = e;
+
+  // Affiche ton bouton personnalisé pour l'installation
+  const installButton = document.getElementById("installButton");
+  installButton.style.display = "block";
+
+  installButton.addEventListener("click", () => {
+    // Affiche la boîte de dialogue d'installation
+    deferredPrompt.prompt();
+
+    // Attendre la réponse de l'utilisateur
+    deferredPrompt.userChoice.then((choiceResult) => {
+      if (choiceResult.outcome === "accepted") {
+        console.log("User accepted the A2HS prompt");
+      } else {
+        console.log("User dismissed the A2HS prompt");
+      }
+      deferredPrompt = null;
+    });
+  });
+});
+
+if (
+  !window.matchMedia("(display-mode: standalone)").matches &&
+  !deferredPrompt
+) {
+  document.getElementById("installMessage").style.display = "block";
+}
