@@ -13,14 +13,6 @@ body {
   height: auto;
   flex-direction: column;
 }
-#installButton {
-  background-color: green;
-  color: #ccc;
-}
-
-#installButton:hover {
-  background-color: #333;
-}
 
 h1 {
   text-align: center;
