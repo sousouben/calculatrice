@@ -49,7 +49,7 @@ h3 {
 
 input[type="number"] {
   width: calc(100% - 22px);
-  padding: 8px;
+  padding: 12px;
   margin-bottom: 10px;
   border: 1px solid #ccc;
   border-radius: 4px;
