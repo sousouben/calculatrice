@@ -77,10 +77,3 @@ window.addEventListener("beforeinstallprompt", (e) => {
     });
   });
 });
-
-if (
-  !window.matchMedia("(display-mode: standalone)").matches &&
-  !deferredPrompt
-) {
-  document.getElementById("installMessage").style.display = "block";
-}

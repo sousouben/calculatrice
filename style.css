@@ -14,15 +14,6 @@ body {
   flex-direction: column;
 }
 
-#installMessage {
-  background-color: #ffcc00;
-  color: #333;
-  padding: 10px;
-  border-radius: 5px;
-  margin-top: 20px;
-  text-align: center;
-}
-
 h1 {
   text-align: center;
   color: black;
