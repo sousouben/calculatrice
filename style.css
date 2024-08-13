@@ -1,7 +1,7 @@
 /* Style global */
 body {
   font-family: Arial, sans-serif;
-  background: url("img.jpeg");
+  background: url("/images/img.jpeg");
   background-repeat: no-repeat;
   background-size: cover;
   background-position: center;
