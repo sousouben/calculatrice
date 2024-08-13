@@ -111,12 +111,12 @@ button:hover {
   color: #333;
 }
 
-.footer {
-  color: #ffffff;
-  text-align: center;
+.footer p {
+  color: #ffffff !important;
+  text-align: center !important;
 }
 
 .footer a {
-  color: #ffffff;
-  text-decoration: none;
+  color: #ffffff !important;
+  text-decoration: none !important;
 }
