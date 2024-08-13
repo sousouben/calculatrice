@@ -1,9 +1,9 @@
 function equilibrerManege() {
-  const poidsMax = 130; // Poids maximum par manège
+  const poidsMax = 130; // Poids maximum par cabine
   const nbManege = 4;
   const poidsManege = [];
 
-  // Récupérer les poids de chaque personne pour chaque manège
+  // Récupérer les poids de chaque personne pour chaque cabine
   for (let i = 1; i <= nbManege; i++) {
     let poidsTotal = 0;
     for (let j = 1; j <= 3; j++) {
@@ -15,7 +15,7 @@ function equilibrerManege() {
     if (poidsTotal > poidsMax) {
       document.getElementById(
         "resultat"
-      ).innerHTML = `Attention ! Le poids total pour le manège ${i} dépasse le poids maximum de ${poidsMax} kg.`;
+      ).innerHTML = `Attention ! Le poids total pour le cabine ${i} dépasse le poids maximum de ${poidsMax} kg.`;
       document.getElementById("resultat").style.display = "block"; // Affiche le résultat
       return;
     }
@@ -23,14 +23,14 @@ function equilibrerManege() {
     poidsManege.push(poidsTotal);
   }
 
-  // Trouver le poids maximum parmi les manèges
+  // Trouver le poids maximum parmi les cabines
   let poidsMaxManege = Math.max(...poidsManege);
 
-  // Calculer le poids à ajouter pour chaque manège
+  // Calculer le poids à ajouter pour chaque cabine
   let resultatHTML = "<h2>Résultat:</h2><ul>";
   for (let i = 0; i < nbManege; i++) {
     let poidsAajouter = poidsMaxManege - poidsManege[i];
-    resultatHTML += `<li>Pour le manège ${
+    resultatHTML += `<li>Pour le cabine ${
       i + 1
     }, ajoutez <strong>${poidsAajouter}</strong> kg pour équilibrer à ${poidsMaxManege} kg.</li>`;
   }

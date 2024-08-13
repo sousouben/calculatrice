@@ -6,6 +6,7 @@ self.addEventListener("install", (event) => {
         "/style.css",
         "/script.js",
         "/manifest.json",
+        "/img.jpeg",
         "/favicon192x192.png",
         "/favicon512x512.png",
       ]);
