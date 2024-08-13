@@ -3,7 +3,7 @@
     "short_name": "Calculatrice",
     "start_url": "/index.html",
     "display": "standalone",
-    "background_color": "#b0bbbd",
+    "background_color": "#f7f7f7",
     "theme_color": "white",
     "icons": [
       {
