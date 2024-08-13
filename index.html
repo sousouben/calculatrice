@@ -3,108 +3,142 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta
+      name="description"
+      content="Équilibrage de la Belle Roue - Calculez facilement le poids dans chaque cabine pour un équilibrage parfait de la roue."
+    />
+    <meta
+      name="keywords"
+      content="Équilibrage, Belle Roue, Calcul, Poids, Cabine, Attraction, Sécurité"
+    />
+    <meta name="robots" content="index, follow" />
+    <meta property="og:title" content="Équilibrage de la Belle Roue" />
+    <meta
+      property="og:description"
+      content="Calculez le poids pour un équilibrage parfait de la Belle Roue."
+    />
     <link rel="icon" type="image/x-icon" href="images/favicon.png" />
     <link rel="manifest" href="/manifest.json" />
     <link rel="stylesheet" href="style.css" />
     <title>Équilibrage des cabines</title>
   </head>
   <body>
-    <!-- Bouton pour installer la PWA -->
-    <button id="installButton" style="display: none">
-      Installer l'Application
-    </button>
+    <header>
+      <!-- Bouton pour installer la PWA -->
+      <button id="installButton" style="display: none">
+        Installer l'Application
+      </button>
+      <h1>Équilibrage de la Belle Roue</h1>
+    </header>
+    <main>
+      <div id="form">
+        <p>
+          L'équilibrage de la Belle Roue est crucial pour assurer la sécurité et
+          le confort des passagers.
+        </p>
+        <p>Entrez le poids de chaque personne dans chaque cabine :</p>
 
-    <h1>Équilibrage de la Belle Roue</h1>
+        <!-- Boucle pour créer les entrées pour chaque cabine -->
+        <div id="manegeInputs">
+          <div id="manege1">
+            <h3>cabine 1</h3>
+            <input
+              type="number"
+              id="manege1_person1"
+              placeholder="Poids personne 1 (en kg)"
+            />
+            <input
+              type="number"
+              id="manege1_person2"
+              placeholder="Poids personne 2 (en kg)"
+            />
+            <input
+              type="number"
+              id="manege1_person3"
+              placeholder="Poids personne 3 (en kg)"
+            />
+          </div>
+          <div id="manege2">
+            <h3>cabine 2</h3>
+            <input
+              type="number"
+              id="manege2_person1"
+              placeholder="Poids personne 1 (en kg)"
+            />
+            <input
+              type="number"
+              id="manege2_person2"
+              placeholder="Poids personne 2 (en kg)"
+            />
+            <input
+              type="number"
+              id="manege2_person3"
+              placeholder="Poids personne 3 (en kg)"
+            />
+          </div>
+          <div id="manege3">
+            <h3>cabine 3</h3>
+            <input
+              type="number"
+              id="manege3_person1"
+              placeholder="Poids personne 1 (en kg)"
+            />
+            <input
+              type="number"
+              id="manege3_person2"
+              placeholder="Poids personne 2 (en kg)"
+            />
+            <input
+              type="number"
+              id="manege3_person3"
+              placeholder="Poids personne 3 (en kg)"
+            />
+          </div>
+          <div id="manege4">
+            <h3>cabine 4</h3>
+            <input
+              type="number"
+              id="manege4_person1"
+              placeholder="Poids personne 1 (en kg)"
+            />
+            <input
+              type="number"
+              id="manege4_person2"
+              placeholder="Poids personne 2 (en kg)"
+            />
+            <input
+              type="number"
+              id="manege4_person3"
+              placeholder="Poids personne 3 (en kg)"
+            />
+          </div>
+        </div>
+        <div class="bouton">
+          <button class="button_calcul" onclick="equilibrerManege()">
+            Calculer
+          </button>
+          <button class="button_reset" onclick="resetForm()">Supprimer</button>
+        </div>
+      </div>
 
+      <!-- Affichage des résultats -->
+      <div id="resultat"></div>
+    </main>
     <!-- Formulaire pour entrer les poids -->
-    <div id="form">
-      <p>Entrez le poids de chaque personne dans chaque cabine :</p>
 
-      <!-- Boucle pour créer les entrées pour chaque cabine -->
-      <div id="manegeInputs">
-        <div id="manege1">
-          <h3>cabine 1</h3>
-          <input
-            type="number"
-            id="manege1_person1"
-            placeholder="Poids personne 1 (en kg)"
-          />
-          <input
-            type="number"
-            id="manege1_person2"
-            placeholder="Poids personne 2 (en kg)"
-          />
-          <input
-            type="number"
-            id="manege1_person3"
-            placeholder="Poids personne 3 (en kg)"
-          />
-        </div>
-        <div id="manege2">
-          <h3>cabine 2</h3>
-          <input
-            type="number"
-            id="manege2_person1"
-            placeholder="Poids personne 1 (en kg)"
-          />
-          <input
-            type="number"
-            id="manege2_person2"
-            placeholder="Poids personne 2 (en kg)"
-          />
-          <input
-            type="number"
-            id="manege2_person3"
-            placeholder="Poids personne 3 (en kg)"
-          />
-        </div>
-        <div id="manege3">
-          <h3>cabine 3</h3>
-          <input
-            type="number"
-            id="manege3_person1"
-            placeholder="Poids personne 1 (en kg)"
-          />
-          <input
-            type="number"
-            id="manege3_person2"
-            placeholder="Poids personne 2 (en kg)"
-          />
-          <input
-            type="number"
-            id="manege3_person3"
-            placeholder="Poids personne 3 (en kg)"
-          />
-        </div>
-        <div id="manege4">
-          <h3>cabine 4</h3>
-          <input
-            type="number"
-            id="manege4_person1"
-            placeholder="Poids personne 1 (en kg)"
-          />
-          <input
-            type="number"
-            id="manege4_person2"
-            placeholder="Poids personne 2 (en kg)"
-          />
-          <input
-            type="number"
-            id="manege4_person3"
-            placeholder="Poids personne 3 (en kg)"
-          />
-        </div>
-      </div>
-      <div class="bouton">
-        <button class="button_calcul" onclick="equilibrerManege()">
-          Calculer
-        </button>
-        <button class="button_reset" onclick="resetForm()">Supprimer</button>
-      </div>
-    </div>
-
-    <!-- Affichage des résultats -->
-    <div id="resultat"></div>
+    <footer>
+      <footer>
+        <p class="footer">
+          &copy; 2024 Équilibrage de la Belle Roue. Propulsé par
+          <a
+            href="http://wpdevdesigns.fr"
+            target="_blank"
+            rel="noopener noreferrer"
+            >wpdevdesigns</a
+          >
+        </p>
+      </footer>
+    </footer>
 
     <script src="script.js"></script>
     <script>
