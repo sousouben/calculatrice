@@ -110,15 +110,3 @@ button:hover {
   margin-bottom: 8px;
   color: #333;
 }
-
-p.footer {
-  color: #ffffff !important;
-  text-align: center !important;
-  display: block;
-}
-
-.footer a {
-  color: #ffffff !important;
-  text-decoration: none !important;
-  display: block;
-}
