@@ -111,7 +111,7 @@ button:hover {
   color: #333;
 }
 
-.footer p {
+p.footer {
   color: #ffffff !important;
   text-align: center !important;
   display: block;
