@@ -33,7 +33,7 @@ function equilibrerManege() {
     let sacs = calculerSacs(poidsAajouter);
     resultatHTML += `<li>BANC ${i + 1} = <strong>${
       poidsManege[i]
-    } kg</strong>, manque <strong>${poidsAajouter} kg</strong>, ajoutez <strong>${sacs}</strong> pour équilibrer à <strong>${poidsMaxManege} kg</strong>. .</li>`;
+    } kg</strong>, manque <strong>${poidsAajouter} kg</strong>, ajoutez <strong>${sacs}</strong> pour équilibrer à <strong>${poidsMaxManege} kg</strong>.</li>`;
   }
   resultatHTML += "</ul>";
 
