@@ -1,12 +1,12 @@
 function equilibrerManege() {
-  const poidsMax = 130; // Poids maximum par cabine
+  const poidsMax = 180; // Poids maximum par cabine
   const nbManege = 4;
   const poidsManege = [];
 
   // Récupérer les poids de chaque personne pour chaque cabine
   for (let i = 1; i <= nbManege; i++) {
     let poidsTotal = 0;
-    for (let j = 1; j <= 3; j++) {
+    for (let j = 1; j <= 4; j++) {
       let poids =
         parseFloat(document.getElementById(`manege${i}_person${j}`).value) || 0;
       poidsTotal += poids;
@@ -30,15 +30,38 @@ function equilibrerManege() {
   let resultatHTML = "<h2>Résultat:</h2><ul>";
   for (let i = 0; i < nbManege; i++) {
     let poidsAajouter = poidsMaxManege - poidsManege[i];
+    let sacs = calculerSacs(poidsAajouter);
     resultatHTML += `<li>Pour le cabine ${
       i + 1
-    }, ajoutez <strong>${poidsAajouter}</strong> kg pour équilibrer à ${poidsMaxManege} kg.</li>`;
+    }, ajoutez <strong>${sacs}</strong> kg pour équilibrer à ${poidsMaxManege} kg. Manque ${poidsAajouter} kg</li>`;
   }
   resultatHTML += "</ul>";
 
   // Afficher les résultats
   document.getElementById("resultat").innerHTML = resultatHTML;
   document.getElementById("resultat").style.display = "block"; // Affiche le résultat
+}
+
+// Fonction pour calculer le nombre de sacs de 5kg, 10kg, ou 15kg nécessaires
+function calculerSacs(poids) {
+  const sacs = { "15kg": 0, "5kg": 0 };
+
+  // Prioriser les sacs de 15kg
+  sacs["15kg"] = Math.floor(poids / 15);
+  poids %= 15;
+
+  // Enfin les sacs de 5kg
+  sacs["5kg"] = Math.floor(poids / 5);
+
+  // Construire la chaîne de texte
+  let resultatSacs = [];
+  for (let [cle, valeur] of Object.entries(sacs)) {
+    if (valeur > 0) {
+      resultatSacs.push(`${valeur} sac(s) de ${cle}`);
+    }
+  }
+
+  return resultatSacs.join(", ");
 }
 
 function resetForm() {
