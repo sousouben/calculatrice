@@ -15,7 +15,7 @@ function equilibrerManege() {
     if (poidsTotal > poidsMax) {
       document.getElementById(
         "resultat"
-      ).innerHTML = `Attention ! Le poids total pour le cabine ${i} dépasse le poids maximum de ${poidsMax} kg.`;
+      ).innerHTML = `Attention ! Le poids total pour la cabine ${i} dépasse le poids maximum de ${poidsMax} kg.`;
       document.getElementById("resultat").style.display = "block"; // Affiche le résultat
       return;
     }
@@ -31,9 +31,9 @@ function equilibrerManege() {
   for (let i = 0; i < nbManege; i++) {
     let poidsAajouter = poidsMaxManege - poidsManege[i];
     let sacs = calculerSacs(poidsAajouter);
-    resultatHTML += `<li>Pour le cabine ${
-      i + 1
-    }, ajoutez <strong>${sacs}</strong> kg pour équilibrer à ${poidsMaxManege} kg. Manque ${poidsAajouter} kg</li>`;
+    resultatHTML += `<li>BANC ${i + 1} = <strong>${
+      poidsManege[i]
+    } kg</strong>, manque <strong>${poidsAajouter} kg</strong>, ajoutez <strong>${sacs}</strong> pour équilibrer à <strong>${poidsMaxManege} kg</strong>. .</li>`;
   }
   resultatHTML += "</ul>";
 
