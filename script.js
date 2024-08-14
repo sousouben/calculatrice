@@ -51,7 +51,7 @@ function calculerSacs(poids) {
   poids %= 15;
 
   // Enfin les sacs de 5kg
-  sacs["5kg"] = Math.floor(poids / 5);
+  sacs["5kg"] = Math.ceil(poids / 5);
 
   // Construire la chaîne de texte
   let resultatSacs = [];
