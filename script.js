@@ -33,7 +33,7 @@ function equilibrerManege() {
     let sacs = calculerSacs(poidsAajouter);
     resultatHTML += `<li>BANC ${i + 1} = <strong>${
       poidsManege[i]
-    } kg</strong>, manque <strong>${poidsAajouter} kg</strong>, ajoutez <strong>${sacs}</strong> pour équilibrer à <strong>${poidsMaxManege} kg</strong>.</li>`;
+    } kg</strong>, ajoutez <strong>${sacs}</strong> .</li>`;
   }
   resultatHTML += "</ul>";
 
@@ -53,6 +53,11 @@ function calculerSacs(poids) {
   // Enfin les sacs de 5kg
   sacs["5kg"] = Math.ceil(poids / 5);
 
+  // Si on a 3 sacs de 5kg, les remplacer par un sac de 15kg
+  if (sacs["5kg"] === 3) {
+    sacs["5kg"] = 0;
+    sacs["15kg"] += 1;
+  }
   // Construire la chaîne de texte
   let resultatSacs = [];
   for (let [cle, valeur] of Object.entries(sacs)) {
